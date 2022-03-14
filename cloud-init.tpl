@@ -21,18 +21,18 @@ users:
 #
 # write file
 write-files:
-- path: /home/odm/fuse_connection.cfg
-  owner: 'odm:odm'
-  permissions: '0600'
-  defer: true
+- path: /home/ubuntu/fuse_connection.cfg
+  owner: 'ubuntu:ubuntu'
   content: |
     accountName ${fuse_accountname}
     accountKey ${fuse_accountkey}
     containerName images
+  permissions: '0600'
 #
 # run commands
 runcmd:
   # install blobfuse to access Azure Storage
+  - cd /home/ubuntu
   - wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
   - sudo dpkg -i packages-microsoft-prod.deb
   - sudo apt-get update
