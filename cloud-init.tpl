@@ -38,7 +38,7 @@ runcmd:
   - sudo chown odm:odm /home/odm/fuse_connection.cfg
   - sudo chmod 600 /home/odm/fuse_connection.cfg
   - sudo --set-home --user=odm chmod 0600 /home/odm/fuse_connection.cfg
-  - sudo --set-home --user=odm blobfuse /odm/data --tmp-path=/mnt/resource/blobfusetmp  --config-file=/var/opt/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
+  - sudo --set-home --user=odm blobfuse /odm/data --tmp-path=/mnt/resource/blobfusetmp  --config-file=/home/odm/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
   #- sudo --set-home --user=odm docker network create --subnet=172.20.0.0/16 odmnetwork
   - sudo --set-home --user=odm docker run --detach --rm --tty --publish 3000:3000 --publish 8001:10000 --publish 8080:8080 opendronemap/clusterodm
   - sudo --set-home --user=odm docker run --detach --rm --publish 3001:3000 opendronemap/nodeodm
