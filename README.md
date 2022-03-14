@@ -25,3 +25,7 @@ In the repository, navigate to `Settings` - `Secrets` - `Actions`. Create new se
 - ID_RSA_WEBODM		  - upload the contents of the public key generated
 - STORAGE_ACCOUNT_NAME	  - name of the storage account
 ```
+
+## References
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/storage-how-to-mount-container-linux
