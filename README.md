@@ -1,6 +1,6 @@
 # OpenDroneMap IaC Terraform cloud-init Azure GitHub Actions
 
-Build of OpenDroneMap using Terraform and cloud-init in Azure, deploying using GitHub Actions.
+Infrastructure as Code (IaC) Build of OpenDroneMap using Terraform and cloud-init in Azure, deploying using GitHub Actions.
 
 Preloading images to a storage container in Azure, then using `blobfuse` to connect to the container for processing.
 
