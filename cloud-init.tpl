@@ -21,7 +21,7 @@ users:
 #
 # write file
 write-files:
-- path: /home/ubuntu/fuse_connection.cfg
+- path: /home/root/fuse_connection.cfg
   owner: 'ubuntu:ubuntu'
   content: |
     accountName ${fuse_accountname}
