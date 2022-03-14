@@ -104,7 +104,7 @@ resource "azurerm_linux_virtual_machine" "nodeodm" {
   ]
   computer_name                   = "${var.prefix}-nodeodm${count.index}-vm"
   disable_password_authentication = true
-  custom_data                     = base64encode(data.template_file.nodeodm.rendered)
+  custom_data                     = base64encode(data.template_file.cloud-init.rendered)
   source_image_reference {
     publisher = element(split(",", lookup(var.standard_os, var.simple_os, "")), 0)
     offer     = element(split(",", lookup(var.standard_os, var.simple_os, "")), 1)
