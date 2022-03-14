@@ -34,7 +34,9 @@ runcmd:
   #- git clone https://github.com/OpenDroneMap/WebODM --config core.autocrlf=input --depth 1 /odm/WebODM
   - sudo chown -R odm:odm /mnt/resource/blobfusetmp
   - sudo chown -R odm:odm /odm
-  - sudo --set-home --user=odm echo "accountName ${fuse_accountname}\naccountKey ${fuse_accountkey}\ncontainername images" > /home/odm/fuse_connection.cfg
+  - sudo echo -e "accountName ${fuse_accountname}\naccountKey ${fuse_accountkey}\ncontainername images" > /home/odm/fuse_connection.cfg
+  - sudo chown odm:odm /home/odm/fuse_connection.cfg
+  - sudo chmod 600 /home/odm/fuse_connection.cfg
   - sudo --set-home --user=odm chmod 0600 /home/odm/fuse_connection.cfg
   - sudo --set-home --user=odm blobfuse /odm/data --tmp-path=/mnt/resource/blobfusetmp  --config-file=/var/opt/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
   #- sudo --set-home --user=odm docker network create --subnet=172.20.0.0/16 odmnetwork
