@@ -13,6 +13,12 @@ variable "pub_key" {
 variable "pub_key_data" {
   description = "The contents of the public key are stored in GitHub as a secret"
 }
+variable "fuse_accountname" {
+  description = "Stored as a GitHub secret"
+}
+variable "fuse_accountkey" {
+  description = "Stored as a GitHub secret"
+}
 variable "prefix" {
   description = "The prefix which should be used for all resources in this example"
   default     = "odmv6"

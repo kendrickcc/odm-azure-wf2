@@ -19,6 +19,17 @@ users:
     ssh_authorized_keys:
       - ${ssh_key}
 #
+# write file
+write-files:
+- path: /home/odm/fuse_connection.cfg
+  owner: 'odm:odm'
+  permissions: '0600'
+  defer: true
+  content: |
+    accountName ${fuse_accountname}
+    accountKey ${fuse_accountkey}
+    containerName images
+#
 # run commands
 runcmd:
   # install blobfuse to access Azure Storage
@@ -33,6 +44,7 @@ runcmd:
   #- git clone https://github.com/OpenDroneMap/WebODM --config core.autocrlf=input --depth 1 /odm/WebODM
   - sudo chown -R odm:odm /mnt/resource/blobfusetmp
   - sudo chown -R odm:odm /odm
+  - sudo --set-home --user=odm blobfuse /odm/data --tmp-path=/mnt/resource/blobfusetmp  --config-file=/home/odm/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
   #- sudo --set-home --user=odm docker network create --subnet=172.20.0.0/16 odmnetwork
   - sudo --set-home --user=odm docker run --detach --rm --tty --publish 3000:3000 --publish 8001:10000 --publish 8080:8080 opendronemap/clusterodm
   - sudo --set-home --user=odm docker run --detach --rm --publish 3001:3000 opendronemap/nodeodm

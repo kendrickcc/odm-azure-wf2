@@ -24,8 +24,13 @@ In the repository, navigate to `Settings` - `Secrets` - `Actions`. Create new se
 - AZURE_SUBSCRIPTION_ID   - upload the subscriptionId or a different subscription ID
 - ID_RSA_WEBODM		  - upload the contents of the public key generated
 - STORAGE_ACCOUNT_NAME	  - name of the storage account
+- FUSE_ACCOUNTNAME	  - storage account name
+- FUSE_ACCOUNTKEY	  - storage account access key
 ```
 
 ## References
 
 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-how-to-mount-container-linux
+
+https://github.com/Azure/azure-storage-fuse
+
