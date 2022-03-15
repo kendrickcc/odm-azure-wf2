@@ -34,7 +34,7 @@ runcmd:
   #- git clone https://github.com/OpenDroneMap/WebODM --config core.autocrlf=input --depth 1 /odm/WebODM
   - sudo chown -R odm:odm /mnt/resource/blobfusetmp
   - sudo chown -R odm:odm /odm
-  - sudo echo -e "accountName ${fuse_accountname}\naccountKey ${fuse_accountkey}\ncontainername images" > /home/odm/fuse_connection.cfg
+  - sudo echo -e "accountName ${fuse_accountname}\naccountKey ${fuse_accountkey}\ncontainerName images" > /home/odm/fuse_connection.cfg
   - sudo chown odm:odm /home/odm/fuse_connection.cfg
   - sudo chmod 600 /home/odm/fuse_connection.cfg
   - sudo --set-home --user=odm chmod 0600 /home/odm/fuse_connection.cfg
