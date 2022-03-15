@@ -7,6 +7,7 @@ data "template_file" "cloud-init" {
     ssh_key = var.pub_key_data
     fuse_accountname = var.fuse_accountname
     fuse_accountkey = var.fuse_accountkey
+    container = var.container
   }
 }
 #-------------------------------
