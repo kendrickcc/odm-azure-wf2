@@ -30,6 +30,7 @@ jobs:
           -backend-config="storage_account_name=${{ secrets.STORAGE_ACCOUNT_NAME}}"
 
     - name: Terraform destroy
+      id: destoy
       run: |
         terraform apply \
           -destroy \
