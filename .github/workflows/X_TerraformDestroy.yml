@@ -17,12 +17,15 @@ jobs:
         shell: bash
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
 
     - name: Terraform init
       run: |
         terraform init -input=false \
-          -backend-config="storage_account_name=${{ secrets.STORAGE_ACCOUNT_NAME}}"    0
+          -backend-config="storage_account_name=${{ secrets.STORAGE_ACCOUNT_NAME}}"
 
     - name: Terraform destroy
       id: destoy
