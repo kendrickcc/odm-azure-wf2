@@ -34,3 +34,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/storage-how-to-mount-contai
 
 https://github.com/Azure/azure-storage-fuse
 
+Rclone and personal OneDrive (https://itsfoss.com/use-onedrive-linux-rclone/)
+Rclone mounting personal OneDrive (https://www.linuxuprising.com/2018/07/how-to-mount-onedrive-in-linux-using.html)pwd
+Rclone and Google Drive (https://rclone.org/drive/#making-your-own-client-id)
+
