@@ -26,6 +26,7 @@ variable "rclone_azblob_account" { }
 variable "rclone_azblob_key" { }
 variable "rclone_gdrive_client_id" { }
 variable "rclone_gdrive_client_secret" { }
+variable "rclone_gdrive_token" { }
 variable "prefix" {
   description = "The prefix which should be used for all resources in this example"
   default     = "odmv6"

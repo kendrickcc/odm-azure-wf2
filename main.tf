@@ -12,6 +12,7 @@ data "template_file" "cloud-init" {
     rclone_azblob_key = var.rclone_azblob_key
     rclone_gdrive_client_id = var.rclone_gdrive_client_id
     rclone_gdrive_client_secret = var.rclone_gdrive_client_secret
+    rclone_gdrive_token = var.rclone_gdrive_token
   }
 }
 #-------------------------------

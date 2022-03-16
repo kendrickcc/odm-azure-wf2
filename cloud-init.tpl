@@ -43,9 +43,7 @@ runcmd:
   - sudo --set-home --user=odm mkdir -p /home/odm/.config/rclone
   - sudo --set-home --user=odm touch /home/odm/.config/rclone/rclone.conf
   - sudo echo -e "[azure-odm]\ntype = azureblob\naccount = ${rclone_azblob_account}\nkey = ${rclone_azblob_key}" >> /home/odm/.config/rclone/rclone.conf
-  - sudo echo -e "[GDrive-ckp]\ntype = drive\nclient_id = ${rclone_gdrive_client_id}\nscope = drive\nclient_secret = ${rclone_gdrive_client_secret}
-token = {"access_token":"ya29.A0ARrdaM_nCRv0TcnPPB7L9ijHdvoRX8HWf32phhqPxj8GpKj4d-r-AYBhrgjDHfeawKUFR6TcCSlsmQ6aeDybLCL6MOqiSJTT1q9Xf-tTSZK3kJXklF9ORTsm68dJPVQf7oIs_wpCe6u7xG09kzs2MS1f-_Oy","token_type":"Bearer","refresh_token":"1//04o7EG0AKxtzuCgYIARAAGAQSNwF-L9IrK8dAMfhA9DG3bPIZzXXCpgWys7ZfPUp4sragWKA9Fibv61EBh_AvH4uH0ZeWG3g1lDI","expiry":"2022-03-15T15:07:12.158286-05:00"}
-team_drive = "
+  - sudo echo -e "[GDrive-ckp]\ntype = drive\nclient_id = ${rclone_gdrive_client_id}\nscope = drive\nclient_secret = ${rclone_gdrive_client_secret}\ntoken = ${rclone_gdrive_token}\nteam_drive = " >> /home/odm/.config/rclone/rclone.conf
   #- sudo --set-home --user=odm blobfuse /odm/data --tmp-path=/mnt/resource/blobfusetmp  --config-file=/home/odm/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
   #- sudo --set-home --user=odm docker network create --subnet=172.20.0.0/16 odmnetwork
   - sudo --set-home --user=odm docker run --detach --rm --tty --publish 3000:3000 --publish 8001:10000 --publish 8080:8080 opendronemap/clusterodm
