@@ -40,7 +40,11 @@ jobs:
           -auto-approve -input=false -no-color \
           -var "pub_key_data=${{ secrets.ID_RSA_WEBODM}}" \
           -var "fuse_accountname=${{secrets.FUSE_ACCOUNTNAME}}" \
-          -var "fuse_accountkey=${{secrets.FUSE_ACCOUNTKEY}}"
+          -var "fuse_accountkey=${{secrets.FUSE_ACCOUNTKEY}}" \
+          -var "rclone_azblob_account=${{secrets.RCLONE_AZBLOB_ACCOUNT}}" \
+          -var "rclone_azblob_key=${{secrets.RCLONE_AZBLOB_KEH}}" \
+          -var "rclone_gdrive_client_id=${{secrets.RCLONE_GDRIVE_CLIENT_ID}}" \
+          -var "rclone_gdrive_client_secret=${{secrets.RCLONE_GDRIVE_CLIENT_SECRET}}" 
 
     - name: Terraform output
       id: output
