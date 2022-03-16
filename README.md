@@ -61,6 +61,12 @@ To map Google Drive folders that are shared with you:
 
 	rclone mount GDrive: /odm/GDRive --drive-shared-with-me 
 
+## Run ODM
+
+First open a browser to ClusterODM port 8001 and add nodes.
+
+	docker run -ti --rm -v /odm/data/datasets:/datasets project opendronemap/odm --project-path /datasets --split 800 --split-overlap 120 --sm-cluster http://192.168.100.4:3001
+
 ## References
 
 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-how-to-mount-container-linux
