@@ -49,6 +49,8 @@ Test the connections. Get a list of remotes:
 
 If successful, should see directories form the remote.
 
+#### Rclone copy
+
 #### Rclone drive mapping
 
 Rclone is capable of mapping a drive. Create a mount point, then map the drive. `rclone mount` alone will run and mount leaving the session open and unable to interact. `Ctrl+C` will kill the command and unmount the drive. Using `--daemon` will put the command in the background. To stop Rclone `kill` the process ID.
