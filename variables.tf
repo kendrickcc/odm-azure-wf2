@@ -40,9 +40,10 @@ variable "subnet_cidr" {
   default = "192.168.100.0/24"
 }
 variable "vmSize" {
-  default = "Standard_D2s_v3"
-  #vmSize = "Standard_D4s_v3"
-  #vmSize = "Standard_D8s_v3"
+  #default = "Standard_E4as_v5"  #  2 CPU  16 GiB $0.128/hour
+  default = "Standard_E8as_v5"  #  8 CPU  32 GiB $0.255/hour
+  #default = "Standard_E16as_v5" # 16 CPU  64 GiB $0.511/hour 
+  #default = "Standard_E20as_v5" # 20 CPU 128 GiB $1.022/hour
 }
 variable "adminUser" {
   default = "ubuntu"
