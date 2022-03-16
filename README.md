@@ -27,6 +27,39 @@ In the repository, navigate to `Settings` - `Secrets` - `Actions`. Create new se
 - FUSE_ACCOUNTNAME	  - storage account name
 - FUSE_ACCOUNTKEY	  - storage account access key
 ```
+### Rclone
+
+Rclone is capable of connecting to many hosts and to try and script all the keys and tokens and client IDs into cloud-init is a lot of work. Much simpler to scp up a local working config file.
+
+Copy `rclone.conf` up to the remote VM.
+
+***Note:*** I add the additional flags to keep from getting a lot of extra hosts added to the `known_hosts` file. It is likely to get the same public IP from a previous build and then SCP/SSH may not work.
+
+	scp -r -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_webodm.pem ~/.config odm@[public IP]:
+
+Connect to the server. 
+
+	ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_webodm.pem odm@[public IP address]
+
+Test the connections. Get a list of remotes:
+
+	rclone listremotes
+	[list of remotes are provided]
+	rclone lsd [remotename]: # the last colon is required
+
+If successful, should see directories form the remote.
+
+#### Rclone drive mapping
+
+Rclone is capable of mapping a drive. Create a mount point, then map the drive. `rclone mount` alone will run and mount leaving the session open and unable to interact. `Ctrl+C` will kill the command and unmount the drive. Using `--daemon` will put the command in the background. To stop Rclone `kill` the process ID.
+
+	mkdir /odm/onedrive
+	rclone --vfs-cache-mode writes mount OneDrive: /odm/onedrive # Ctrl+C to break and unmount
+	rclone --vfs-cache-mode writes mount OneDrive: /odm/onedrive --daemon # Use `kill`
+
+To map Google Drive folders that are shared with you:
+
+	rclone mount GDrive: /odm/GDRive --drive-shared-with-me 
 
 ## References
 
