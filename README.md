@@ -51,6 +51,8 @@ If successful, should see directories form the remote.
 
 #### Rclone copy
 
+Basic Rclone copy commands i.e. rclone copy remote:directory /odm/data
+
 #### Rclone drive mapping
 
 Rclone is capable of mapping a drive. Create a mount point, then map the drive. `rclone mount` alone will run and mount leaving the session open and unable to interact. `Ctrl+C` will kill the command and unmount the drive. Using `--daemon` will put the command in the background. To stop Rclone `kill` the process ID.
@@ -71,7 +73,7 @@ To map Google Drive folders that are shared with you:
 
 ### With ClusterODM
 
-First open a browser to ClusterODM port 8001 and add nodes. http://[public ip]:8001
+First open a browser to ClusterODM port 10000 and add nodes. http://[public ip]:10000
 
 	docker run -ti --rm -v /odm/data/datasets:/datasets project opendronemap/odm --project-path /datasets --split 800 --split-overlap 120 --sm-cluster http://192.168.100.4:3001
 
