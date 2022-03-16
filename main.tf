@@ -8,11 +8,6 @@ data "template_file" "cloud-init" {
     fuse_accountname = var.fuse_accountname
     fuse_accountkey = var.fuse_accountkey
     container = var.container
-    rclone_azblob_account = var.rclone_azblob_account
-    rclone_azblob_key = var.rclone_azblob_key
-    rclone_gdrive_client_id = var.rclone_gdrive_client_id
-    rclone_gdrive_client_secret = var.rclone_gdrive_client_secret
-    rclone_gdrive_token = var.rclone_gdrive_token
   }
 }
 #-------------------------------
