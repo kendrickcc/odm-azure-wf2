@@ -65,7 +65,13 @@ To map Google Drive folders that are shared with you:
 
 ## Run ODM
 
-First open a browser to ClusterODM port 8001 and add nodes.
+### Single ODM
+
+	docker run -ti --rm -v /odm/data/datasets:/datasets project opendronemap/odm --project-path /datasets
+
+### With ClusterODM
+
+First open a browser to ClusterODM port 8001 and add nodes. http://[public ip]:8001
 
 	docker run -ti --rm -v /odm/data/datasets:/datasets project opendronemap/odm --project-path /datasets --split 800 --split-overlap 120 --sm-cluster http://192.168.100.4:3001
 
