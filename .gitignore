@@ -1,1 +1,7 @@
 notes.txt
+variables.tfvars
+azure.tfbackend
+.terraform.lock.hcl
+azurerm.tfbackend
+.terraform/terraform.tfstate
+.terraform

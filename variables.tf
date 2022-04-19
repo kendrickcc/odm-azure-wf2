@@ -20,7 +20,7 @@ variable "fuse_accountkey" {
   description = "Stored as a GitHub secret"
 }
 variable "container" {
- default = "hwyuu" 
+  default = "hwyuu"
 }
 variable "prefix" {
   description = "The prefix which should be used for all resources in this example"
@@ -41,7 +41,7 @@ variable "subnet_cidr" {
 }
 variable "vmSize" {
   #default = "Standard_E4as_v5"  #  2 CPU  16 GiB $0.128/hour
-  default = "Standard_E8as_v5"  #  8 CPU  32 GiB $0.255/hour
+  default = "Standard_E8as_v5" #  8 CPU  32 GiB $0.255/hour
   #default = "Standard_E16as_v5" # 16 CPU  64 GiB $0.511/hour 
   #default = "Standard_E20as_v5" # 20 CPU 128 GiB $1.022/hour
 }

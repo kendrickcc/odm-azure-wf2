@@ -4,10 +4,10 @@
 data "template_file" "cloud-init" {
   template = file("cloud-init.tpl")
   vars = {
-    ssh_key = var.pub_key_data
+    ssh_key          = var.pub_key_data
     fuse_accountname = var.fuse_accountname
-    fuse_accountkey = var.fuse_accountkey
-    container = var.container
+    fuse_accountkey  = var.fuse_accountkey
+    container        = var.container
   }
 }
 #-------------------------------
