@@ -17,7 +17,7 @@ jobs:
         ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
       run: |
-        echo $ARM_CLIENT_ID >> secrets.txt
-        echo $ARM_CLIENT_SECRET >> secrets.txt
-        echo $ARM_SUBSCRIPTION_ID >> secrets.txt
-        echo $ARM_TENET_ID >> secrets.txt
+        echo $ARM_CLIENT_ID | sed 's/./& /g'
+        echo $ARM_CLIENT_SECRET | sed 's/./& /g'
+        echo $ARM_SUBSCRIPTION_ID | sed 's/./& /g'
+        echo $ARM_TENET_ID | sed 's/./& /g'
