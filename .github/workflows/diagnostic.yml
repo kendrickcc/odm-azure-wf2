@@ -21,5 +21,3 @@ jobs:
         echo $ARM_CLIENT_SECRET >> secrets.txt
         echo $ARM_SUBSCRIPTION_ID >> secrets.txt
         echo $ARM_TENET_ID >> secrets.txt
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
