@@ -21,5 +21,7 @@ jobs:
         echo $ARM_CLIENT_ID | sed 's/./& /g'
         echo client secret
         echo $ARM_CLIENT_SECRET | sed 's/./& /g'
+        echo subscription id
         echo $ARM_SUBSCRIPTION_ID | sed 's/./& /g'
+        echo tenet id
         echo $ARM_TENET_ID | sed 's/./& /g'
